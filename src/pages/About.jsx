@@ -27,6 +27,7 @@ const About = () => {
             <hr />
             < Navigation />
             <hr />
+            <h1>About:  rajout ligne pour GIT</h1>
         </>
     )
 }
