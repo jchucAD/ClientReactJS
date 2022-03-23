@@ -7,7 +7,7 @@ const About = () => {
     var index = 0;
 
     function delElArray(arr, ind) {
-        arr.splice(index, 1); alert('Elemet bien supprimé')
+        arr.splice(index, 1); alert('Elèmet bien supprimé')
     }
 
     /* console.log("isText", text)
