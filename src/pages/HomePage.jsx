@@ -26,6 +26,9 @@ const HomePage = () => {
             <hr />
             < Navigation />
         </div>
+
+
+
     )
 }
 

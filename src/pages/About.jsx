@@ -10,8 +10,10 @@ const About = () => {
         arr.splice(index, 1); alert('Elemet bien supprimé')
     }
 
-    console.log("isText", text)
+    /* console.log("isText", text)
     console.log("Items", items)
+    */
+
     return (
         <><h1>About this app</h1>
             <input onChange={(e) => setText(e.target.value)} />
