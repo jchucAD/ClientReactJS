@@ -25,10 +25,8 @@ const HomePage = () => {
             <Todos title={"title1"} lenght={10} isDisplayTodos={isDisplayTodos} />
             <hr />
             < Navigation />
+            <hr /> CE ci est pour GIT
         </div>
-
-
-
     )
 }
 

@@ -31,6 +31,7 @@ const About = () => {
             <h1>About:  rajout ligne pour GIT tag V0</h1>
             <h1>About:  rajout ligne pour GIT tag V1</h1>
             <h1>About:  rajout ligne depuis GITHUB</h1>
+            <h1>modif sur version 1.0 pour test GIT</h1>
         </>
     )
 }
