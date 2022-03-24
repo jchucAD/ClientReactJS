@@ -27,6 +27,8 @@ const About = () => {
             <hr />
             < Navigation />
             <hr />
+
+            <h1>modif sur version 1.0 pour test GIT</h1>
         </>
     )
 }
