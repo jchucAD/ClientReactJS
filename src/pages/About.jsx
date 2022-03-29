@@ -13,7 +13,7 @@ const About = () => {
         // forcer la mise à jour
         setItems((prevItems) => {
             const filteredItems = prevItems.filter((item) => item !== name)
-            console.log("filteretItems: ", filteredItems)
+            //console.log("filteretItems: ", filteredItems)
             return filteredItems
         })
         // setItems(filteredItems)

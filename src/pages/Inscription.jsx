@@ -4,25 +4,27 @@ import '../App.css';
 // import "./styles.css";
 import Navigation from "../components/commun/Navigation";
 
-const Formulaire = () => {
-    const [persons, setPersons] = useState([]);
+const Inscription = () => {
     const [name, setName] = useState("");
     const [age, setAge] = useState(0);
+    const [adresse, setAdresse] = useState("");
 
     return (
         <div className="A">
-            <h1>Saisir le nom et age de la personne :</h1>
+            <h1>Nouvelle inscription : saisir le nom, age et adresse de la personne :</h1>
             <input
                 placeholder="tapez name : " onChange={(e) => {
                     setName(e.target.value);
                 }} />
-
             <input placeholder="tapez age :" onChange={(e) => {
                 setAge(e.target.value);
             }} />
+            <input placeholder="tapez adresse :" onChange={(e) => {
+                setAdresse(e.target.value);
+            }} />
             <button
                 onClick={() => {
-                    setPersons([...persons, { name, age }]);
+                    ;
                 }}
             >
                 Enregistrer
@@ -41,4 +43,4 @@ const Formulaire = () => {
     );
 }
 
-export default Formulaire;
+export default Inscription;
