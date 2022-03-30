@@ -4,6 +4,7 @@ import '../App.css';
 import Todos from '../Todos';
 import Navigation from "../components/commun/Navigation";
 
+
 const HomePage = () => {
     const [isDisplayTodos, setIsDisplayTodos] = useState(false)
     console.log("isDisplayTodos", isDisplayTodos)
