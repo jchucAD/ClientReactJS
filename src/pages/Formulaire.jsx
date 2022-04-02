@@ -13,11 +13,11 @@ const Formulaire = () => {
         <div className="A">
             <h1>Saisir le nom et age de la personne :</h1>
             <input
-                placeholder="tapez name : " onChange={(e) => {
+                placeholder="tapez name" onChange={(e) => {
                     setName(e.target.value);
                 }} />
 
-            <input placeholder="tapez age :" onChange={(e) => {
+            <input placeholder="tapez age" onChange={(e) => {
                 setAge(e.target.value);
             }} />
             <button
@@ -29,7 +29,13 @@ const Formulaire = () => {
             </button>
             {persons.map((item) => (
                 <div>
-                    <p>Nom : {item.name} et age : {item.age}</p>
+                    <form action='http://localhost:3030/user' method="post">
+                        <label>Name :</label>
+                        <input type="text" name="name" value={item.name} />
+                        <labe>Age :</labe>
+                        <input type="text" age="age" value={item.age} />
+                        <input type="submit" value='Envoyer' />
+                    </form>
                 </div>
             ))}
 

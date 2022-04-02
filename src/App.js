@@ -5,6 +5,7 @@ import Formulaire from "./pages/Formulaire";
 import About from "./pages/About";
 import Inscription from "./pages/Inscription";
 import Users from "./pages/Users";
+
 const App = () => {
   return (
     <BrowserRouter>

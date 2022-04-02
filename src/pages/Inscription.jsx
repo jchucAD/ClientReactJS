@@ -24,11 +24,10 @@ const Inscription = () => {
             }} />
             <button
                 onClick={() => {
-                    ;
+                    // xxxxxxx;
                 }}
             >
-                Enregistrer
-            </button>
+                Valider            </button>
             {persons.map((item) => (
                 <div>
                     <p>Nom : {item.name} et age : {item.age}</p>
