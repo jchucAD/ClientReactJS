@@ -1,5 +1,7 @@
 #modif dans GitHub
 
+/.env
+
 # dependencies
 /node_modules
 /.pnp
