@@ -6,7 +6,10 @@ const Navigation = () => {
         <>
             <ul>
                 <p>Menu </p>
+                <NavLink to='/formulaire'> <li>Formulaire Clients</li> </NavLink>
+                <NavLink to='/inscription'> <li>Inscription Clients</li> </NavLink>
                 <NavLink to='/about'> <li>Vers About</li> </NavLink>
+                <NavLink to='/users'> <li>Vers Users</li> </NavLink>
                 <NavLink to='/'> <li>Vers HomePage </li></NavLink>
             </ul>
         </>
