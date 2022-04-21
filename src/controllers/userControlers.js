@@ -1,13 +1,18 @@
-// import userModel from './../modeles/userModel.js'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import dotenv from 'dotenv'
+//initialise les variable depuis .env
+dotenv.config()
+
+const PORT = process.env.PORTSERVER || 4000
+const URISERVER = process.env.URISERVER || "http://localhost"
 
 export function listUsers() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         async function fetchUsers() {
-            const userList = await axios.get("http://localhost:4000/getUsers")
+            const userList = await axios.get(URISERVER + ":" + PORT + "/getUsers")
             //axios retourne le resultat dans DATA
             setUsers(userList.data.users)
             //console.log(userList.data)
@@ -22,7 +27,7 @@ export function listUsers() {
 export async function createUser(user) {
     console.log('appel createUser:', user)
 
-    const newUser = await axios.post("http://localhost:4000/adduser",
+    const newUser = await axios.post(URISERVER + ":" + PORT + "/adduser",
         {
             age: user.age, phone: user.phone, username: user.name,
             email: user.email, password: user.password, address: user.address
@@ -31,7 +36,7 @@ export async function createUser(user) {
     return newUser.data.user
 }
 
-export function displayUser(user) {
+export async function displayUser(user) {
     console.log(user);
     alert("Détail display:" + user.username)
 }
@@ -44,14 +49,15 @@ export async function deleteUser(user) {
 
     //login
     console.log('login:' + email)
-    const token = await axios.post("http://localhost:4000/login", { email: email, password: password })
+    const token = await axios.post(URISERVER + ":" + PORT + "/login",
+        { email: email, password: password })
     console.log("token " + token.data.token)
 
     //Delete
     const value = "brearer " + token.data.token
 
     console.log('deleteuser:' + userID)
-    const resDel = await axios.delete("http://localhost:4000/deleteuser/" + userID, { headers: { "Authorization": value } })
+    const resDel = await axios.delete(URISERVER + ":" + PORT + "/deleteuser/" + userID, { headers: { "Authorization": value } })
     console.log("retour supression: " + resDel.data.message + " Id:" + resDel.data.userId)
     alert("User supprimé " + resDel.data.userId)
 

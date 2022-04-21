@@ -5,6 +5,7 @@ import Formulaire from "./pages/Formulaire";
 import About from "./pages/About";
 import Inscription from "./pages/Inscription";
 import Users from "./pages/Users";
+import Signup from "./pages/Signup"
 
 const App = () => {
   return (
@@ -15,11 +16,12 @@ const App = () => {
         <Route exact path='/inscription' element={<Inscription />} />
         <Route exact path='/' element={<HomePage />} />
         <Route exact path='/users' element={<Users />} />
+        <Route exact path='/signup' element={<Signup />} />
       </Routes>
     </BrowserRouter>
 
   )
 }
 
-export default App;
+export default App
 
