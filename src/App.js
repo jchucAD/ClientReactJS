@@ -1,11 +1,11 @@
-import React from "react";
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import HomePage from "./pages/HomePage";
-import Formulaire from "./pages/Formulaire";
-import About from "./pages/About";
-import Inscription from "./pages/Inscription";
-import Users from "./pages/Users";
-import Signup from "./pages/Signup"
+import React from "react"
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import HomePage from "./pages/HomePage"
+import Formulaire from "./pages/Formulaire"
+import About from "./pages/About"
+import Inscription from "./pages/Inscription"
+import Users from "./pages/Users"
+import Signup from "./pages/Inscription"
 
 const App = () => {
   return (

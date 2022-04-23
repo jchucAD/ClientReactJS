@@ -23,6 +23,15 @@ export function listUsers() {
     return { users }
 }
 
+export async function signupUser(email, password) {
+    console.log('appel signupUser:', email, "pwd:", password)
+
+    const newUser = await axios.post(URISERVER + ":" + PORT + "/signup",
+        { email, password }
+    )
+    return { email, password }
+}
+
 
 export async function createUser(user) {
     console.log('appel createUser:', user)
