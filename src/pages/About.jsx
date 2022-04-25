@@ -1,5 +1,5 @@
-import React, { Component, useState } from "react";
-import Navigation from "../components/commun/Navigation";
+import React, { useState } from "react"
+import Navigation from "../components/commun/Navigation"
 
 const About = () => {
     const [text, setText] = useState("")
@@ -37,4 +37,4 @@ const About = () => {
         </>
     )
 }
-export default About;
+export default About

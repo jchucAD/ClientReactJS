@@ -1,42 +1,31 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Navigation from "../components/commun/Navigation";
-import emoji from "node-emoji"
-import { listUsers, deleteUser, addUser, createUser, displayUser } from "./../controllers/userControlers"
+import React, { useState, useEffect } from "react"
+import Navigation from "../components/commun/Navigation"
+import { listUsers } from "./../controllers/userControlers"
 
+import dotenv from 'dotenv'
+//initialise les variable depuis .env
+dotenv.config()
+const PORT = process.env.PORTSERVER || 4000
+const URISERVER = process.env.URISERVER || "http://localhost"
 
 function Users(props) {
-    const [users, setUsers] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
-        async function fetchUsers() {
-            const userList = await axios.get("http://localhost:4000/getUsers")
-            //axios retourne le resultat dans DATA
-            setUsers(userList.data.users)
-            //console.log(userList.data)
-            setIsLoading(false);
-        }
-        fetchUsers();
-    }, []);
 
-    if (isLoading) return <p>Chargement de la liste des users......</p>;
+    const personsDB = listUsers()
 
     return (
-
-        < div >
-            {listUsers()}
-            <hr /> < Navigation /> <hr /> <h3>{emoji.get('coffee')}Liste des users:</h3>
-            <div>
-                {users.map((user) =>
-                    <div>
-                        <li key={user._id} > Nom {user.username} et email {user.email}
-                            <button onClick={() => displayUser(user)}> see profil </button>
-                            <button onClick={() => deleteUser(user)}> delete profil </button>
-                        </li >
+        <>
+            <hr /> < Navigation />  <hr />
+            <h2>Affiche la liste des users en base avec les filtres</h2>
+            <ol>
+                {personsDB.users.map((item) => (
+                    <div key={item._id}>
+                        < li > Nom : {item.username} et email : {item.email} </li>
                     </div>
-                )}
-            </div>
-        </div >
+                ))
+                }
+            </ol >
+
+        </>
     )
 }
 

@@ -13,6 +13,7 @@ const Formulaire = () => {
     const [password, setPassword] = useState("")
     const [phone, setPhone] = useState("")
     const [address, setAddress] = useState("")
+    const userConnected = false
     const personsDB = listUsers()
 
     //console.log(personsDB)
@@ -29,7 +30,8 @@ const Formulaire = () => {
             }} />
             <input placeholder="tapez email" onChange={(e) => {
                 setEmail(e.target.value)
-            }} /><input placeholder="tapez password" onChange={(e) => {
+            }} />
+            <input placeholder="tapez password" onChange={(e) => {
                 setPassword(e.target.value)
             }} />
             <input placeholder="tapez l'adresse" onChange={(e) => {
@@ -40,27 +42,46 @@ const Formulaire = () => {
             }} />
             <button
                 onClick={() => {
-                    setPersons([...persons, { name, age, email, password, address, phone }]);
+                    setPersons([...persons, {
+                        name,
+                        age, email, password,
+                        address,
+                        phone
+                    }])
+
                 }}
             > Vérifier </button>
             <div>
                 {persons.map((item) => (
                     <div>
-                        <p>Nom : {item.name} et age : {item.age} </p>
-                        <button onClick={() => createUser(item)}> Enregistrer en base </button>
+                        <p>Nom : {item.name} / {item.address.full} et age : {item.age} </p>
+                        <button onClick={async () => {
+                            const newUser = await createUser(item)
+                            //console.log('newUser:', newUser)
+                            personsDB.setUsers([...personsDB.users, newUser])
+                        }
+                        }> Enregistrer en base </button>
                     </div>
                 ))}
             </div>
             <h2>Affiche la liste des users en base :</h2>
             <ol>
                 {personsDB.users.map((item) => (
-                    <div>
-                        <li>Nom : {item.username} et email : {item.email}
-                            <button onClick={() => deleteUser(item)}> Supprimer en base </button> </li>
+                    <div key={item._id}>
+                        < li key="id_${item._id}"> Nom : {item.username} et email : {item.email}
+                            <button onClick={async () => {
+                                await deleteUser(item)
+                                personsDB.setUsers((previusPersons) => {
+                                    const filtredList = previusPersons.filter((element) => element._id !== item._id)
+                                    return filtredList
+                                })
+                            }}
+                            > Supprimer en base </button> </li>
                     </div>
-                ))}
-            </ol>
-        </div>
+                ))
+                }
+            </ol >
+        </div >
     )
 }
 
