@@ -12,8 +12,8 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1 id='grosTitre'> Mon programme React/Node</h1>
-
+            <h1 id='grosTitre'> Mon programme React/Node et MongoDB</h1>
+            <h3>appel API via AXIOS/PASSPORT/JWT, appel BD via Mongoose (schéma, hooks)</h3>
             <p id='a'> Essai avec un bouton</p>
 
             <hr />
