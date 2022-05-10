@@ -16,6 +16,7 @@ function Users(props) {
         <>
             <hr /> < Navigation />  <hr />
             <h2>Affiche la liste des users en base avec les filtres</h2>
+            URI base ${URISERVER} et port ${PORT}
             <ol>
                 {personsDB.users.map((item) => (
                     <div key={item._id}>
