@@ -4,6 +4,7 @@ import '../App.css';
 import Todos from '../Todos';
 import Navigation from "../components/commun/Navigation";
 
+
 const HomePage = () => {
     const [isDisplayTodos, setIsDisplayTodos] = useState(false)
     console.log("isDisplayTodos", isDisplayTodos)
@@ -11,7 +12,8 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1 id='grosTitre'> Mon premier programme</h1>
+            <h1 id='grosTitre'> Mon programme React/Node et MongoDB</h1>
+            <h3>appel API via AXIOS/PASSPORT/JWT, appel BD via Mongoose (schéma, hooks)</h3>
             <p id='a'> Essai avec un bouton</p>
 
             <hr />

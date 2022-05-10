@@ -1,5 +1,7 @@
 #modif dans GitHub
 
+/.env
+
 # dependencies
 /node_modules
 /.pnp
@@ -7,6 +9,9 @@
 
 # testing
 /coverage
+
+# env
+.env
 
 # production
 /build
@@ -21,3 +26,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local Netlify folder
+.netlify

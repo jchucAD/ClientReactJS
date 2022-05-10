@@ -8,4 +8,4 @@ function Todos(props) {
     </div>
 }
 
-export default Todos;
+export default Todos
