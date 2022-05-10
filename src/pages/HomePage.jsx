@@ -12,7 +12,7 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1 id='grosTitre'> Mon premier programme</h1>
+            <h1 id='grosTitre'> Mon programme React/Node</h1>
             <p id='a'> Essai avec un bouton</p>
 
             <hr />
